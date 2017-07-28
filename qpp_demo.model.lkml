@@ -31,3 +31,5 @@ explore: qppar__prod__latest__transform_carrier_claims__carrier_claims_clean {}
 explore: qppar__prod__latest__transform_inpatient_claims__inpatient_claims_clean {}
 
 explore: qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean {}
+
+explore: claims_per_npi {}
