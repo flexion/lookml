@@ -2,7 +2,14 @@ view: claims_submissions_join {
      derived_table: {
      sql: SELECT
       outpatient_claims.at_physn_npi AS outpatient_claim_npi,
-      submissions.nationalprovideridentifier AS submission_npi
+      submissions.nationalprovideridentifier AS submission_npi,
+      submissions.programname AS submissions_program_name,
+      submissions.taxpayeridentificationnumber AS submissions_taxpayeridentificationnumber,
+      submissions.performanceyear AS submissions_performanceyear,
+      submissions.measurementsets AS submissions_measurementsets,
+      outpatient_claims.prvdr_num AS outpatient_provider_number,
+      outpatient_claims.clm_pmt_amt AS outpatient_provider_claim_payment_amount,
+      outpatient_claims.nch_prmry_pyr_clm_pd_amt AS outpatient_nch_prmry_pyr_clm_pd_amt
       FROM
       default.qppar__prod__latest__extract_outpatient_claims__outpatient_claims AS outpatient_claims
       FULL OUTER JOIN
