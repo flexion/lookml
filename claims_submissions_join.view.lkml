@@ -18,7 +18,6 @@ view: claims_submissions_join {
        ;;
    }
 
-   # Define your dimensions and measures here, like this:
    dimension: outpatient_claim_npi {
      description: "Outpatient claims NPIs"
      type: number
@@ -30,6 +29,48 @@ view: claims_submissions_join {
      type: number
      sql: ${TABLE}.submission_npi ;;
    }
+
+  dimension: submissions_program_name {
+    description: "Submissions program name"
+    type: number
+    sql: ${TABLE}.submissions_program_name ;;
+  }
+
+  dimension: submissions_taxpayeridentificationnumber {
+    description: "Taxpayer Identification Number"
+    type: number
+    sql: ${TABLE}.submissions_taxpayeridentificationnumber ;;
+  }
+
+  dimension: submissions_performanceyear {
+    description: "Performance year"
+    type: number
+    sql: ${TABLE}.performanceyear ;;
+  }
+
+  dimension: submissions_measurementsets {
+    description: "Submission measurement sets"
+    type: number
+    sql: ${TABLE}.measurementsets ;;
+  }
+
+  dimension: outpatient_provider_number {
+    description: "Outpatient claims provider number"
+    type: number
+    sql: ${TABLE}.outpatient_provider_number ;;
+  }
+
+  dimension: outpatient_provider_claim_payment_amount {
+    description: "Outpatient claim payment amount"
+    type: number
+    sql: ${TABLE}.outpatient_provider_claim_payment_amount ;;
+  }
+
+  dimension: outpatient_nch_prmry_pyr_clm_pd_amt {
+    description: "Outpatient claim NCH primary payer claim paid amount"
+    type: number
+    sql: ${TABLE}.outpatient_nch_prmry_pyr_clm_pd_amt ;;
+  }
 
    measure: total_outpatient_claim_npis {
      description: "Total number of npis in outpatient claims"
