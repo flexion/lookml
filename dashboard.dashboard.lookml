@@ -6,10 +6,10 @@
   filters:
 
   elements:
-    - name: Claims amt per NPI
-      type: table
-      explore: claims_per_npi
-      dimensions: [claims_per_npi.total_claims_amt, claims_per_npi.npi]
+    #- name: Claims amt per NPI
+    #  type: table
+    #  explore: claims_per_npi
+    #  dimensions: [claims_per_npi.total_claims_amt, claims_per_npi.npi]
     - name: Total Value of Processed Claims
       type: single_value
       explore: claims_totals
