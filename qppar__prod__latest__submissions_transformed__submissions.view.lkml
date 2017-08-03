@@ -47,7 +47,7 @@ view: qppar__prod__latest__submissions_transformed__submissions {
     sql: ${TABLE}.performanceyear ;;
   }
 
-  dimension: programname {
+  dimension: program_name {
     type: string
     sql: ${TABLE}.programname ;;
   }
@@ -73,7 +73,7 @@ view: qppar__prod__latest__submissions_transformed__submissions {
 
   measure: count {
     type: count
-    drill_fields: [id, programname]
+    drill_fields: [id, program_name]
   }
 
   measure: total_npis {
