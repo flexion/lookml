@@ -93,4 +93,10 @@ view: claims_submissions_join {
     sql: ${submission_npi} ;;
   }
 
+  measure: percent_npis_submitted {
+    description: "Percent of outpatient npis that have submissions records"
+    type: number
+    value_format: "#0.0%"
+    sql: count(${submission_npi}) / count(${outpatient_claim_npi}) ;;
+  }
  }
