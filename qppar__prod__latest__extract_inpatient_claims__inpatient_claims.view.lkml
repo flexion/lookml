@@ -431,4 +431,10 @@ view: qppar__prod__latest__extract_inpatient_claims__inpatient_claims {
     type: count
     drill_fields: [nuna_filename]
   }
+
+  measure: total_claims_amt {
+    type:  sum
+    sql:  ${clm_pmt_amt} ;;
+    value_format_name: usd
+  }
 }
