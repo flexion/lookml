@@ -26,13 +26,13 @@ view: claims_submissions_join {
 
    measure: total_outpatient_claims_npis {
      description: "Total number of npis in outpatient claims"
-     type: sum_distinct
+     type: count_distinct
      sql: ${outpatient_claim_npi} ;;
    }
 
   measure: total_submission_npis {
     description: "Total number of submission npis"
-    type: sum_distinct
+    type: count_distinct
     sql: ${submission_npi} ;;
   }
 
