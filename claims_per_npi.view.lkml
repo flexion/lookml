@@ -18,9 +18,9 @@ view: claims_per_npi {
     drill_fields: [detail*]
   }
 
-  dimension: total_claims {
+  dimension: total_claims_amt {
     type: number
-    sql: ${TABLE}.total_claims ;;
+    sql: ${TABLE}.total_claims_amt ;;
   }
 
   dimension: npi {
@@ -29,6 +29,6 @@ view: claims_per_npi {
   }
 
   set: detail {
-    fields: [total_claims, npi]
+    fields: [total_claims_amt, npi]
   }
 }
