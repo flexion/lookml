@@ -5,6 +5,7 @@ view: claims_per_npi {
         claims.at_physn_npi AS npi
       FROM default.qppar__prod__latest__extract_inpatient_claims__inpatient_claims AS claims
       where at_physn_npi is not null
+      AND clm_pmt_amt > 0
       GROUP BY claims.at_physn_npi
       ORDER BY sum(clm_pmt_amt) DESC
        ;;
