@@ -14,10 +14,18 @@
       type: single_value
       explore: claims_submissions_join
       dimensions: [claims_submissions_join.total_submission_npis, claims_submissions_join.total_outpatient_claim_npis]
-    - name: Total Value of Processed Outpatient Claims
+    - name: Value of Processed Outpatient Claims
       type: single_value
       explore: qppar__prod__latest__extract_outpatient_claims__outpatient_claims
       dimensions: [qppar__prod__latest__extract_outpatient_claims__outpatient_claims.total_claims_amt]
+    - name: Value of Processed Inpatient Claims
+      type: single_value
+      explore: qppar__prod__latest__extract_inpatient_claims__inpatient_claims
+      dimensions: [qppar__prod__latest__extract_inpatient_claims__inpatient_claims.total_claims_amt]
+    - name: Total Value of Processed Claims
+      type: single_value
+      explore: claims_totals
+      dimensions: [claims_totals.total_claims_amt]
     - name: Claims amt per NPI
       type: table
       explore: claims_per_npi
