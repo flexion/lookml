@@ -7,6 +7,7 @@ view: claims_totals {
         SELECT at_physn_npi, clm_pmt_amt FROM default.qppar__prod__latest__extract_outpatient_claims__outpatient_claims
         UNION ALL
         SELECT at_physn_npi, clm_pmt_amt FROM default.qppar__prod__latest__extract_inpatient_claims__inpatient_claims )
+        WHERE clm_pmt_amt > 0
        ;;
    }
 
