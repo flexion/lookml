@@ -10,10 +10,22 @@
       type: single_value
       explore: qppar__prod__latest__extract_outpatient_claims__outpatient_claims
       dimensions: [qppar__prod__latest__extract_outpatient_claims__outpatient_claims.total_npis]
-    - name: Percent Providers Submitted
-      type: single_value
+    - name: Providers Submitted
+      title: Providers Submitted
+      model: qpp_demo
       explore: claims_submissions_join
-      dimensions: [claims_submissions_join.total_submission_npis, claims_submissions_join.total_outpatient_claim_npis]
+      type: single_value
+      fields: [claims_submissions_join.total_submission_npis, claims_submissions_join.total_outpatient_claim_npis]
+      limit: 1000
+      column_limit: 50
+      custom_color_enabled: false
+      custom_color: forestgreen
+      show_single_value_title: true
+      show_comparison: true
+      comparison_type: progress_percentage
+      comparison_reverse_colors: false
+      show_comparison_label: true
+      comparison_label: Total Outpatient Claim Providers
     - name: Value of Processed Outpatient Claims
       type: single_value
       explore: qppar__prod__latest__extract_outpatient_claims__outpatient_claims
