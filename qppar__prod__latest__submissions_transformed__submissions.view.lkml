@@ -75,4 +75,9 @@ view: qppar__prod__latest__submissions_transformed__submissions {
     type: count
     drill_fields: [id, programname]
   }
+
+  measure: total_npis {
+    type: count_distinct
+    sql: ${nationalprovideridentifier} ;;
+  }
 }

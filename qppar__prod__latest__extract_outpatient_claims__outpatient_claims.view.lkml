@@ -412,4 +412,9 @@ view: qppar__prod__latest__extract_outpatient_claims__outpatient_claims {
     sql:  ${clm_pmt_amt} ;;
     value_format_name: usd
   }
+
+  measure: total_npis {
+    type: count_distinct
+    sql: ${at_physn_npi} ;;
+  }
 }

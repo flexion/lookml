@@ -31,7 +31,7 @@ view: claims_totals {
 
   measure: total_npis {
     description: "Total number of npis in the system"
-    type: sum_distinct
+    type: count_distinct
     sql: ${npi} ;;
   }
 }
