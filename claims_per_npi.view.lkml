@@ -7,7 +7,6 @@ view: claims_per_npi {
       where at_physn_npi is not null
       GROUP BY claims.at_physn_npi
       ORDER BY sum(clm_pmt_amt) DESC
-      limit 20
        ;;
   }
 
