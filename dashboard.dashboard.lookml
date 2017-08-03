@@ -22,7 +22,7 @@
       type: single_value
       explore: claims_totals
       dimensions: [claims_totals.total_npis]
-    #- name: Percent Providers Submitted
-    #  type: looker_pie
-    #  explore: claims_submissions_join
-    #  dimensions: [claims_submissions_join.total_submission_npis, claims_submissions_join.total_claim_npis]
+    - name: Percent Providers Submitted
+      type: looker_pie
+      explore: claims_submissions_join
+      dimensions: [claims_submissions_join.total_submission_npis, claims_submissions_join.total_outpatient_claim_npis]

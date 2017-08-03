@@ -24,7 +24,7 @@ view: claims_submissions_join {
      sql: ${TABLE}.submission_npi ;;
    }
 
-   measure: total_outpatient_claims_npis {
+   measure: total_outpatient_claim_npis {
      description: "Total number of npis in outpatient claims"
      type: count_distinct
      sql: ${outpatient_claim_npi} ;;
