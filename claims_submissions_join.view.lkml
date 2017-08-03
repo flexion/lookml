@@ -32,7 +32,7 @@ view: claims_submissions_join {
 
   dimension: submissions_program_name {
     description: "Submissions program name"
-    type: number
+    type: string
     sql: ${TABLE}.submissions_program_name ;;
   }
 
@@ -50,7 +50,7 @@ view: claims_submissions_join {
 
   dimension: submissions_measurementsets {
     description: "Submission measurement sets"
-    type: number
+    type: string
     sql: ${TABLE}.measurementsets ;;
   }
 
@@ -63,12 +63,14 @@ view: claims_submissions_join {
   dimension: outpatient_provider_claim_payment_amount {
     description: "Outpatient claim payment amount"
     type: number
+    value_format_name: usd
     sql: ${TABLE}.outpatient_provider_claim_payment_amount ;;
   }
 
   dimension: outpatient_nch_prmry_pyr_clm_pd_amt {
     description: "Outpatient claim NCH primary payer claim paid amount"
     type: number
+    value_format_name: usd
     sql: ${TABLE}.outpatient_nch_prmry_pyr_clm_pd_amt ;;
   }
 
