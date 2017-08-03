@@ -44,7 +44,7 @@ view: claims_submissions_join {
 
   dimension: submissions_performanceyear {
     description: "Performance year"
-    type: number
+    type: date_year
     sql: ${TABLE}.submissions_performanceyear ;;
   }
 
