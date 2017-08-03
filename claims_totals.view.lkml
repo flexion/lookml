@@ -27,7 +27,7 @@ view: claims_totals {
      description: "Total dollar amount paid out in claims"
      type: sum
      sql: ${clm_pmt_amt} ;;
-    value_format_name: usd
+     value_format_name: usd
    }
 
    measure: total_npis {

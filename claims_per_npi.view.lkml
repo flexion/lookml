@@ -21,6 +21,7 @@ view: claims_per_npi {
   dimension: total_claims_amt {
     type: number
     sql: ${TABLE}.total_claims_amt ;;
+    value_format_name: usd
   }
 
   dimension: npi {
