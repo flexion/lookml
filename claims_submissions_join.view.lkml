@@ -74,6 +74,12 @@ view: claims_submissions_join {
     sql: ${TABLE}.outpatient_nch_prmry_pyr_clm_pd_amt ;;
   }
 
+  measure: total_outpatient_claims_paid {
+    description: "Total value paid in outpatient claims"
+    type: sum
+    sql: ${outpatient_provider_claim_payment_amount} ;;
+  }
+
    measure: total_outpatient_claim_npis {
      description: "Total number of npis in outpatient claims"
      type: count_distinct
