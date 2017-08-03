@@ -1,7 +1,7 @@
 view: claims_per_npi {
   derived_table: {
     sql: SELECT
-        sum(claims.clm_pmt_amt) AS total_claims,
+        sum(claims.clm_pmt_amt) AS total_claims_amt,
         claims.at_physn_npi AS npi
       FROM default.qppar__prod__latest__extract_inpatient_claims__inpatient_claims AS claims
       where at_physn_npi is not null
