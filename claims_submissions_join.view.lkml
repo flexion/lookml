@@ -45,13 +45,13 @@ view: claims_submissions_join {
   dimension: submissions_performanceyear {
     description: "Performance year"
     type: number
-    sql: ${TABLE}.performanceyear ;;
+    sql: ${TABLE}.submissions_performanceyear ;;
   }
 
   dimension: submissions_measurementsets {
     description: "Submission measurement sets"
     type: string
-    sql: ${TABLE}.measurementsets ;;
+    sql: ${TABLE}.submissions_measurementsets ;;
   }
 
   dimension: outpatient_provider_number {
