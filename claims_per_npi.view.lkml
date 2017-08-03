@@ -29,6 +29,13 @@ view: claims_per_npi {
     sql: ${TABLE}.npi ;;
   }
 
+  dimension: total_claims_buckets {
+    type: tier
+    tiers: [0,30000,100000000]
+    sql: ${TABLE}.total_claims_amt ;;
+    value_format_name: usd
+  }
+
   set: detail {
     fields: [total_claims_amt, npi]
   }
