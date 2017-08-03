@@ -18,11 +18,11 @@
       type: single_value
       explore: qppar__prod__latest__submissions_transformed__submissions
       dimensions: [qppar__prod__latest__submissions_transformed__submissions.total_npis]
-    - name: Total NPIs in claims
+    - name: Total NPIs in outpatient claims
       type: single_value
-      explore: claims_totals
-      dimensions: [claims_totals.total_npis]
+      explore: qppar__prod__latest__extract_outpatient_claims__outpatient_claims
+      dimensions: [qppar__prod__latest__extract_outpatient_claims__outpatient_claims.total_npis]
     - name: Percent Providers Submitted
-      type: looker_pie
+      type: single_value
       explore: claims_submissions_join
       dimensions: [claims_submissions_join.total_submission_npis, claims_submissions_join.total_outpatient_claim_npis]
