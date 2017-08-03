@@ -18,3 +18,7 @@
       type: single_value
       explore: qppar__prod__latest__submissions_transformed__submissions
       dimensions: [qppar__prod__latest__submissions_transformed__submissions.total_npis]
+    - name: Total NPIs in claims
+      type: single_value
+      explore: claims_totals
+      dimensions: [claims_totals.total_npis]
