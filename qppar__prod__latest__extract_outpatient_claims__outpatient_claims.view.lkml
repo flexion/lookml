@@ -13,7 +13,7 @@ view: qppar__prod__latest__extract_outpatient_claims__outpatient_claims {
   }
 
   dimension: clm_from_dt {
-    type: string
+    type: date
     sql: ${TABLE}.clm_from_dt ;;
   }
 
@@ -28,7 +28,7 @@ view: qppar__prod__latest__extract_outpatient_claims__outpatient_claims {
   }
 
   dimension: clm_thru_dt {
-    type: string
+    type: date
     sql: ${TABLE}.clm_thru_dt ;;
   }
 

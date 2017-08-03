@@ -33,11 +33,3 @@ view: claims_per_npi {
     fields: [total_claims_amt, npi]
   }
 }
-
-view: claims_buckets {
-  dimension: claims_per_npi {
-    type: tier
-    tiers: [0,30000,100000000]
-    sql: ${claims_per_npi};;
-  }
-}
