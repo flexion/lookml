@@ -7,7 +7,6 @@ view: claims_totals {
         SELECT at_physn_npi, clm_pmt_amt FROM default.qppar__prod__latest__extract_outpatient_claims__outpatient_claims
         UNION ALL
         SELECT at_physn_npi, clm_pmt_amt FROM default.qppar__prod__latest__extract_inpatient_claims__inpatient_claims )
-        LIMIT 100
        ;;
    }
 
@@ -27,11 +26,12 @@ view: claims_totals {
      description: "Total dollar amount paid out in claims"
      type: sum
      sql: ${clm_pmt_amt} ;;
+    value_format_name: usd
    }
 
-  measure: total_npis {
-    description: "Total number of npis in the system"
-    type: count_distinct
-    sql: ${npi} ;;
-  }
+   measure: total_npis {
+     description: "Total number of npis in the system"
+     type: count_distinct
+     sql: ${npi} ;;
+   }
 }
