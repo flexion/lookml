@@ -1,7 +1,7 @@
 view: carrier_claims_count {
   derived_table: {
     sql: SELECT
-        count(*)
+        count(*) AS claims_count
       FROM default.qppar__prod__latest__transform_carrier_claims__carrier_claims_clean
 
       GROUP BY qppar__prod__latest__transform_carrier_claims__carrier_claims_clean.national_provider_identifier
@@ -16,18 +16,13 @@ view: carrier_claims_count {
     drill_fields: [detail*]
   }
 
-  dimension: count1 {
-    type: number
-    sql: ${TABLE}.`count(1)` ;;
-  }
-
   dimension: total_claims_buckets {
     type: tier
     tiers: [0,100,200,300,400,500,600]
-    sql: ${TABLE}.`count(1)` ;;
+    sql: ${TABLE}.claims_count ;;
   }
 
   set: detail {
-    fields: [count1]
+    fields: [total_claims_buckets]
   }
 }
