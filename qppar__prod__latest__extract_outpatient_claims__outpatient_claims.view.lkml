@@ -29,7 +29,7 @@ view: qppar__prod__latest__extract_outpatient_claims__outpatient_claims {
 
   dimension_group: clm_thru_dt {
     type: time
-    timeframes: [date]
+    datatype: yyyymmdd
     sql: ${TABLE}.clm_thru_dt ;;
   }
 
