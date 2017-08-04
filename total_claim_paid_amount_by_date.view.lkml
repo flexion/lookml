@@ -1,7 +1,7 @@
 view: total_claim_paid_amount_by_date {
   derived_table: {
     sql: SELECT
-          qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.end_date,
+          DATE_FORMAT(qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.end_date, 'yyyy-MM-dd') as date_formatted,
           sum(qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.claim_paid_amount)
         FROM default.qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean  AS qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean
         GROUP BY qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.end_date
@@ -18,7 +18,7 @@ view: total_claim_paid_amount_by_date {
 
   dimension: end_date {
     type: date
-    sql: ${TABLE}.end_date ;;
+    sql: ${TABLE}.date_formatted ;;
   }
 
   dimension: sumclaim_paid_amount {
