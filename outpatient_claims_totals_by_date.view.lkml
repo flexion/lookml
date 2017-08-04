@@ -5,7 +5,7 @@ view: outpatient_claims_totals_by_date {
         qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.claim_paid_amount  AS clm_pmt_amt
       FROM default.qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean  AS qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean
 
-      GROUP BY DATE_FORMAT(qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.end_date , 'yyyy-MM-dd'),qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.claim_paid_amount
+      GROUP BY DATE_FORMAT(qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.end_date , 'yyyy-MM-dd'),qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.end_date
       LIMIT 500
        ;;
   }
