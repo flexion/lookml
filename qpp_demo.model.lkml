@@ -37,3 +37,5 @@ explore: claims_per_npi {}
 explore: claims_totals {}
 
 explore: claims_submissions_join {}
+
+explore:  carrier_claims_count {}
