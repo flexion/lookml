@@ -38,4 +38,4 @@ explore: claims_totals {}
 
 explore: claims_submissions_join {}
 
-explore: outpatient_claims_totals_by_date {}
+explore: total_claim_paid_amount_by_date {}
