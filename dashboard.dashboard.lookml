@@ -1,6 +1,6 @@
 - dashboard: QPP Dashbaord
   title: QPP Dashboard
-  layout: tile
+  layout: newspaper
   tile_size: 100
 
   filters:
