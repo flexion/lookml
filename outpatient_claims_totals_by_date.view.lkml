@@ -1,8 +1,8 @@
 view: outpatient_claims_totals_by_date {
   derived_table: {
     sql: SELECT
-        DATE_FORMAT(qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.end_date , 'yyyy-MM-dd') AS qpparprodlatesttransformoutpatientclaimsoutpatientclaimsclean_1,
-        sum(qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.claim_paid_amount)  AS qpparprodlatesttransformoutpatientclaimsoutpatientclaimsclean_2
+        DATE_FORMAT(qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.end_date , 'yyyy-MM-dd') AS claims_date,
+        sum(qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.claim_paid_amount)  AS claims_total_for_date
       FROM default.qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean  AS qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean
 
       GROUP BY DATE_FORMAT(qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.end_date , 'yyyy-MM-dd'),qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.claim_paid_amount
@@ -17,17 +17,18 @@ view: outpatient_claims_totals_by_date {
     drill_fields: [detail*]
   }
 
-  dimension: qpparprodlatesttransformoutpatientclaimsoutpatientclaimsclean_1 {
-    type: string
-    sql: ${TABLE}.qpparprodlatesttransformoutpatientclaimsoutpatientclaimsclean_1 ;;
+  dimension: claims_total_for_date {
+    type: number
+    sql: ${TABLE}.claims_total_for_date
+    format: usd;;
   }
 
-  dimension: qpparprodlatesttransformoutpatientclaimsoutpatientclaimsclean_2 {
-    type: number
-    sql: ${TABLE}.qpparprodlatesttransformoutpatientclaimsoutpatientclaimsclean_2 ;;
+  dimension: claims_date  {
+    type: date
+    sql: ${TABLE}.claims_date ;;
   }
 
   set: detail {
-    fields: [qpparprodlatesttransformoutpatientclaimsoutpatientclaimsclean_1, qpparprodlatesttransformoutpatientclaimsoutpatientclaimsclean_2]
+    fields: [claims_total_for_date, claims_date]
   }
 }
