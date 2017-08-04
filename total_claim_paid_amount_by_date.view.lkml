@@ -5,6 +5,7 @@ view: total_claim_paid_amount_by_date {
           sum(qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.claim_paid_amount)
         FROM default.qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean  AS qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean
         GROUP BY qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.end_date
+        ORDER BY qppar__prod__latest__transform_outpatient_claims__outpatient_claims_clean.end_date
         limit 10000
        ;;
   }
